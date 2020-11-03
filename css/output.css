@@ -1,0 +1,176 @@
+/* 
+
+@mixin example {
+    color: ...;
+    font-size: ...;
+} 
+
+nav ul {
+    @include example;
+}
+
+
+*/
+* {
+  margin: 0;
+  font-family: "Secular One", sans-serif;
+}
+
+#header {
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  width: 500px;
+  margin: 0;
+  z-index: 300;
+  font-size: 3em;
+  color: black;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-250px);
+}
+
+#overlay_win {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(70, 146, 58, 0.8);
+  z-index: 200;
+  transition: all 1s;
+}
+
+#reset {
+  display: block;
+  z-index: 300;
+  position: fixed;
+  margin: 0;
+  left: 50%;
+  top: 82%;
+  width: 100px;
+  height: 40px;
+  transform: translateX(-50px);
+}
+
+#announcer {
+  color: black;
+  display: flex;
+  height: 100%;
+  font-size: 4em;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.panel {
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  border-radius: 20px;
+  transition: all 0.5s;
+  background-color: #afafaf;
+}
+
+.flipped {
+  animation-name: turn;
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.back {
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+}
+.back:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: 100% 100%;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+input {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.container-main {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  perspective: 700px;
+}
+
+img {
+  height: 50%;
+  width: 50%;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 400px;
+  height: 400px;
+  row-gap: 20px;
+  column-gap: 20px;
+  margin: auto;
+}
+
+.visible {
+  display: block;
+}
+
+.invisible {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .container-grid {
+    width: 600px;
+    height: 600px;
+  }
+
+  #announcer {
+    font-size: 5em;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
