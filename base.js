@@ -1,18 +1,4 @@
-/* 
 
-objs:
-1) every panel has no frontface until clicked, adding the FLIPPED class onClick(),
-2) turn counter starts on load (( must reset back to 0 upon reset )),
-3) for each turn, ++ the turn counter to keep track of which player,
-4) have a winCheck() function for each time a panel is flipped to check if certain rows or columns are complete,
-5) if winCheck() is true, display the win screen with the congrats displaying the winner based on the even or odd turn count,
-6) make sure to completely reset the turn counter to NULL and remove the FLIPPED class, also remove the (('pointer-events','none')) set 'none' to 'auto'
-7) reset removes classes, removes winscreen, flips panels, and resets the turn counter
-    
-winCheck() logic
-if ($('#TL-X').hasClass('visible') && $('#TM-X').hasClass('visible') && $('#TR-X').hasClass('visible'))
-***do NOT have an ELSE{ return } in the winCheck or it will never get to the other conditions that need checking***
-*/
 
 let turn = 0;
 
