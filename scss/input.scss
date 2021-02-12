@@ -1,0 +1,7 @@
+@import 'utilities/index';
+@import 'base/index';
+
+        // set default terminal to 'cmd' and not 'powershell', fixed the failure to compile
+        // set up watcher by copy pasting this command (sass --watch scss/input.scss:css/output.css)
+        // stop watcher by 'ctrl + c'
+        // import hierarchy matters, like calling a variable before it is declared!!
