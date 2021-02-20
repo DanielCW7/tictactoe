@@ -1,5 +1,17 @@
 
+// conditional testing for rows of X's and O's
 
+
+
+
+
+
+
+
+
+
+
+// 
 let turn = 0;
 
 // ============================================== winner's screen
@@ -22,7 +34,6 @@ function winCheck() {
         $('#TL').css('background', '#3fe850');
         $('#TM').css('background', '#3fe850');
         $('#TR').css('background', '#3fe850');
-        console.log('TOP ROW X');
         setTimeout(winner, 750)
     }
 
@@ -147,131 +158,112 @@ function winCheck() {
     }
 }
 
+
+// ============================================== panel flipper function
+ 
+function flipper(a, b, c) {
+  $(c).addClass('flipped').css('pointer-events', 'none');
+  turn += 1;
+    if(turn%2 == 0) {
+      $(a).addClass('visible');
+      $(b).addClass('invisible');
+    } else {
+      $(a).addClass('invisible');
+      $(b).addClass('visible');
+    };
+}
+
+
 // ============================================== panel listeners
+
 // TOP LEFT
 $('#TL').click(function() {
-    $(this).addClass('flipped').css('pointer-events', 'none');
-    turn++;
-        if(turn%2 == 0) {
-            $('#TL-O').addClass('visible');
-            $('#TL-X').addClass('invisible');
-        } else {
-            $('#TL-O').addClass('invisible');
-            $('#TL-X').addClass('visible');
-        };
-    winCheck()
+  const TL = $('#TL')
+  const TL_O = $('#TL-O');
+  const TL_X = $('#TL-X');
+
+  flipper(TL_O, TL_X, TL)
+  winCheck()
 });
 
 // TOP MIDDLE
 $('#TM').click(function() {
-    $(this).addClass('flipped').css('pointer-events', 'none');
-    turn++
-        if(turn%2 == 0) {
-            $('#TM-O').addClass('visible');
-            $('#TM-X').addClass('invisible');
-        } else {
-            $('#TM-O').addClass('invisible');
-            $('#TM-X').addClass('visible');
-        };
-    winCheck()
+  const TM = $('#TM')
+  const TM_O = $('#TM-O');
+  const TM_X = $('#TM-X');
+
+  flipper(TM_O, TM_X, TM)
+  winCheck()
 });
 
 // TOP RIGHT
 $('#TR').click(function() {
-    $(this).addClass('flipped').css('pointer-events', 'none');
-    turn++
-        if(turn%2 == 0) {
-            $('#TR-O').addClass('visible');
-            $('#TR-X').addClass('invisible');
-        } else {
-            $('#TR-O').addClass('invisible');
-            $('#TR-X').addClass('visible');
-        };
-    winCheck()
+  const TR = $('#TR')
+  const TR_O = $('#TR-O');
+  const TR_X = $('#TR-X');
+
+  flipper(TR_O, TR_X, TR)
+  winCheck()
 });
 
 // MID LEFT
 $('#ML').click(function() {
-    $(this).addClass('flipped').css('pointer-events', 'none');
-    turn++
-        if(turn%2 == 0) {
-            $('#ML-O').addClass('visible');
-            $('#ML-X').addClass('invisible');
-        } else {
-            $('#ML-O').addClass('invisible');
-            $('#ML-X').addClass('visible');
-        };
-    winCheck()
+  const ML = $('#ML')
+  const ML_O = $('#ML-O');
+  const ML_X = $('#ML-X');
+
+  flipper(ML_O, ML_X, ML)
+  winCheck()
 });
 
 // MID MID
 $('#MM').click(function() {
-    $(this).addClass('flipped').css('pointer-events', 'none');
-    turn++
-        if(turn%2 == 0) {
-            $('#MM-O').addClass('visible');
-            $('#MM-X').addClass('invisible');
-        } else {
-            $('#MM-O').addClass('invisible');
-            $('#MM-X').addClass('visible');
-        };
-    winCheck()
+  const MM = $('#MM')
+  const MM_O = $('#MM-O');
+  const MM_X = $('#MM-X');
+
+  flipper(MM_O, MM_X, MM)
+  winCheck()
 });
 
 // MID RIGHT
 $('#MR').click(function() {
-    $(this).addClass('flipped').css('pointer-events', 'none');
-    turn++
-        if(turn%2 == 0) {
-            $('#MR-O').addClass('visible');
-            $('#MR-X').addClass('invisible');
-        } else {
-            $('#MR-O').addClass('invisible');
-            $('#MR-X').addClass('visible');
-        };
-    winCheck()
+  const MR = $('#MR')
+  const MR_O = $('#MR-O');
+  const MR_X = $('#MR-X');
+
+  flipper(MR_O, MR_X, MR)
+  winCheck()
 });
 
 // BOT LEFT
 $('#BL').click(function() {
-    $(this).addClass('flipped').css('pointer-events', 'none');
-    turn++
-        if(turn%2 == 0) {
-            $('#BL-O').addClass('visible');
-            $('#BL-X').addClass('invisible');
-        } else {
-            $('#BL-O').addClass('invisible');
-            $('#BL-X').addClass('visible');
-        };
-    winCheck()
+  const BL = $('#BL')
+  const BL_O = $('#BL-O');
+  const BL_X = $('#BL-X');
+
+  flipper(BL_O, BL_X, BL)
+  winCheck()
 });
 
 // BOT MID
 $('#BM').click(function() {
-    $(this).addClass('flipped').css('pointer-events', 'none');
-    turn++
-        if(turn%2 == 0) {
-            $('#BM-O').addClass('visible');
-            $('#BM-X').addClass('invisible');
-        } else {
-            $('#BM-O').addClass('invisible');
-            $('#BM-X').addClass('visible');
-        };
-    winCheck()
+  const BM = $('#BM')
+  const BM_O = $('#BM-O');
+  const BM_X = $('#BM-X');
+
+  flipper(BM_O, BM_X, BM)
+  winCheck()
 });
 
 // BOT RIGHT
 $('#BR').click(function() {
-    $(this).addClass('flipped').css('pointer-events', 'none');
-        turn++
-        if(turn%2 == 0) {
-            $('#BR-O').addClass('visible');
-            $('#BR-X').addClass('invisible');
-        } else {
-            $('#BR-O').addClass('invisible');
-            $('#BR-X').addClass('visible');
-        };
-    winCheck()
+  const BR = $('#BR')
+  const BR_O = $('#BR-O');
+  const BR_X = $('#BR-X');
+
+  flipper(BR_O, BR_X, BR)
+  winCheck()
 });
 
 
@@ -280,24 +272,7 @@ $('#BR').click(function() {
 
 // resets the turn counter and also removes all the classes for both X/Os
 function restart() {
-        $('#TL-X').removeClass('visible invisible');
-        $('#TL-O').removeClass('visible invisible');
-        $('#TM-X').removeClass('visible invisible');
-        $('#TM-O').removeClass('visible invisible');
-        $('#TR-X').removeClass('visible invisible');
-        $('#TR-O').removeClass('visible invisible');
-        $('#ML-X').removeClass('visible invisible');
-        $('#ML-O').removeClass('visible invisible');
-        $('#MM-X').removeClass('visible invisible');
-        $('#MM-O').removeClass('visible invisible');
-        $('#MR-X').removeClass('visible invisible');
-        $('#MR-O').removeClass('visible invisible');
-        $('#BL-X').removeClass('visible invisible');
-        $('#BL-O').removeClass('visible invisible');
-        $('#BM-X').removeClass('visible invisible');
-        $('#BM-O').removeClass('visible invisible');
-        $('#BR-X').removeClass('visible invisible');
-        $('#BR-O').removeClass('visible invisible');
+    $('#TL-X, #TL-O, #TM-X, #TM-O, #TR-X, #TR-O, #ML-X, #ML-O, #MM-X, #MM-O, #MR-X, #MR-O, #BL-X, #BL-O, #BM-X, #BM-O, #BR-X, #BR-O').removeClass('visible invisible');
     turn = 0;
 };
 
@@ -306,14 +281,6 @@ $('#reset').click(function() {
     $('#overlay_win').css('display', 'none');
     $('#header').css('color', 'black');
     $('div.flipped').removeClass('flipped').css('pointer-events', 'auto');
-    $('#TL').css('background', '#afafaf');
-    $('#TM').css('background', '#afafaf');
-    $('#TR').css('background', '#afafaf');
-    $('#ML').css('background', '#afafaf');
-    $('#MM').css('background', '#afafaf');
-    $('#MR').css('background', '#afafaf');
-    $('#BL').css('background', '#afafaf');
-    $('#BM').css('background', '#afafaf');
-    $('#BR').css('background', '#afafaf');
+    $('#TL, #TM, #TR, #ML, #MM, #MR, #BL, #BM, #BR').css('background', '#afafaf');
     setTimeout(restart, 350)
 });
