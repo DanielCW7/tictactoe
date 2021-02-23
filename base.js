@@ -1,18 +1,16 @@
 
-// conditional testing for rows of X's and O's
-
-
-
-
-
-
-
-
-
-
-
-// 
 let turn = 0;
+
+// $('#off').click(function() {
+//   $('.panel').css('pointer-events', 'none');
+//   console.log(turn)
+// });
+
+// $('#on').click(function() {
+//   $('.panel').css('pointer-events', '');
+//   console.log(turn)
+// });
+
 
 // ============================================== winner's screen
 function winner() {
@@ -171,6 +169,12 @@ function flipper(a, b, c) {
       $(a).addClass('invisible');
       $(b).addClass('visible');
     };
+}
+
+
+// ============================================== disable panels
+function disable(a) {
+  a.css('pointer-events', '')
 }
 
 
