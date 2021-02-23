@@ -18,9 +18,9 @@ function winner() {
     $('#announcer').css('color', 'whitesmoke');
     $('#header').css('color', 'whitesmoke');
     if (turn%2 == 0) {
-        $('#announcer').text('player O wins!')
+        $('#announcer').text('O wins!')
     } else {
-        $('#announcer').text('player X wins!')
+        $('#announcer').text('X wins!')
     }
 }
 

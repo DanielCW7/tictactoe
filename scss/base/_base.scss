@@ -23,15 +23,6 @@
   transition: all 1s;
 }
 
-#reset {
-  position: relative;
-  display: block;
-  margin: 20px auto auto;
-  width: 100px;
-  height: 40px;
-  z-index: 150;
-}
-
 #announcer {
   color: black;
   display: flex;
@@ -43,6 +34,14 @@
   margin: 0;
 }
 
+#reset {
+  position: relative;
+  display: block;
+  margin: 20px auto auto;
+  width: 100px;
+  height: 40px;
+  z-index: 150;
+}
 .panel {
   position: relative;
   transform-style: preserve-3d;
