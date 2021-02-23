@@ -185,7 +185,7 @@ $('#TL').click(function() {
   const TL = $('#TL')
   const TL_O = $('#TL-O');
   const TL_X = $('#TL-X');
-
+  setTimeout(  function(){$('#TL').children().css('display', 'flex')}, 150)
   flipper(TL_O, TL_X, TL)
   winCheck()
 });
@@ -195,6 +195,7 @@ $('#TM').click(function() {
   const TM = $('#TM')
   const TM_O = $('#TM-O');
   const TM_X = $('#TM-X');
+  setTimeout(  function(){$('#TM').children().css('display', 'flex')}, 150)
 
   flipper(TM_O, TM_X, TM)
   winCheck()
@@ -205,6 +206,7 @@ $('#TR').click(function() {
   const TR = $('#TR')
   const TR_O = $('#TR-O');
   const TR_X = $('#TR-X');
+  setTimeout(  function(){$('#TR').children().css('display', 'flex')}, 150)
 
   flipper(TR_O, TR_X, TR)
   winCheck()
@@ -215,6 +217,7 @@ $('#ML').click(function() {
   const ML = $('#ML')
   const ML_O = $('#ML-O');
   const ML_X = $('#ML-X');
+  setTimeout(  function(){$('#ML').children().css('display', 'flex')}, 150)
 
   flipper(ML_O, ML_X, ML)
   winCheck()
@@ -225,6 +228,7 @@ $('#MM').click(function() {
   const MM = $('#MM')
   const MM_O = $('#MM-O');
   const MM_X = $('#MM-X');
+  setTimeout(  function(){$('#MM').children().css('display', 'flex')}, 150)
 
   flipper(MM_O, MM_X, MM)
   winCheck()
@@ -235,6 +239,7 @@ $('#MR').click(function() {
   const MR = $('#MR')
   const MR_O = $('#MR-O');
   const MR_X = $('#MR-X');
+  setTimeout(  function(){$('#MR').children().css('display', 'flex')}, 150)
 
   flipper(MR_O, MR_X, MR)
   winCheck()
@@ -245,6 +250,7 @@ $('#BL').click(function() {
   const BL = $('#BL')
   const BL_O = $('#BL-O');
   const BL_X = $('#BL-X');
+  setTimeout(  function(){$('#BL').children().css('display', 'flex')}, 150)
 
   flipper(BL_O, BL_X, BL)
   winCheck()
@@ -255,6 +261,7 @@ $('#BM').click(function() {
   const BM = $('#BM')
   const BM_O = $('#BM-O');
   const BM_X = $('#BM-X');
+  setTimeout(  function(){$('#BM').children().css('display', 'flex')}, 150)
 
   flipper(BM_O, BM_X, BM)
   winCheck()
@@ -265,6 +272,7 @@ $('#BR').click(function() {
   const BR = $('#BR')
   const BR_O = $('#BR-O');
   const BR_X = $('#BR-X');
+  setTimeout(  function(){$('#BR').children().css('display', 'flex')}, 150)
 
   flipper(BR_O, BR_X, BR)
   winCheck()
@@ -277,14 +285,17 @@ $('#BR').click(function() {
 // resets the turn counter and also removes all the classes for both X/Os
 function restart() {
     $('#TL-X, #TL-O, #TM-X, #TM-O, #TR-X, #TR-O, #ML-X, #ML-O, #MM-X, #MM-O, #MR-X, #MR-O, #BL-X, #BL-O, #BM-X, #BM-O, #BR-X, #BR-O').removeClass('visible invisible');
+
     turn = 0;
 };
 
 // allows for the panels to flip and change color before the X/Os are both reset
 $('#reset').click(function() {
     $('#overlay_win').css('display', 'none');
-    $('#header').css('color', 'black');
+    // $('#header').css('color', 'black');
     $('div.flipped').removeClass('flipped').css('pointer-events', 'auto');
-    $('#TL, #TM, #TR, #ML, #MM, #MR, #BL, #BM, #BR').css('background', '#afafaf');
+    $('#TL, #TM, #TR, #ML, #MM, #MR, #BL, #BM, #BR').css('background', 'rgba(54, 54, 54, 0.438)');
+    setTimeout(  function(){$('#TL, #TM, #TR, #ML, #MM, #MR, #BL, #BM, #BR').children().css('display', 'none')}, 100)    
     setTimeout(restart, 350)
 });
+
